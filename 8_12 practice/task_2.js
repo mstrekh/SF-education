@@ -23,3 +23,25 @@ switch (typeof(varX)) {
 	default:
 		console.log('Тип х не определён');
 }
+
+
+
+let varX = prompt('Введите значение X');
+
+if (varX =='false' || varX == 'true') {
+	console.log('X - логический тип');
+}
+else {
+	if(varX == 'null' || varX == 'undefined' || isNan(parseInt(varX)) == true) {
+		console.log('Тип X не определён');
+	}
+	else {
+		console.log()
+		if(typeof(parseInt(varX)) == 'number') {
+			console.log('X - число');
+		}
+		else {
+			console.log('X - Строка');
+		}
+	}
+}
