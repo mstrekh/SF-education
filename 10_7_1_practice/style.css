@@ -1,0 +1,28 @@
+.calc-row {
+    height: 100vh;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.input-window {
+    text-align: end;
+    font-size: x-large;
+}
+#inputWindow::placeholder {
+    color: black
+}
+
+.card-body div.col {
+    margin: 2px;
+}
+
+.card {
+    width:80%;
+    border-width: 2px;
+}
+
+#history {
+    text-align: center;;
+    min-width: 200px;
+    box-sizing: content-box;
+    border: 1px solid rgb(179, 184, 190);
+}
