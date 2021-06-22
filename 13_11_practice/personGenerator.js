@@ -79,6 +79,9 @@ const personGenerator = {
         this.person = {};
         // this.person.gender = this.randomGender();
         this.person.firstName = this.randomFirstName();
+        // this.person.surName = ;
+        // this.person.dateOfBirth = ;
+        
         return this.person;
     }
 };
