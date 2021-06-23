@@ -35,6 +35,7 @@ const personGenerator = {
             "id_10": "Андрей"
         }
     }`,
+
     firstNameFemaleJson: `{
         "count": 10,
         "list": {     
@@ -50,9 +51,42 @@ const personGenerator = {
             "id_10": "Марина"
         }
     }`,
+    
+    secondNameJson: `{
+        "count": 4,
+        "list": {     
+            "id_1": "Александр",
+            "id_2": "Максим",
+            "id_3": "Иван",
+            "id_4": "Артем"
+        }
+    }`,
+
     GENDER_MALE: 'Мужчина',
     GENDER_FEMALE: 'Женщина',
 
+    OccupationMaleJson: `{
+        "count": 5,
+        "list": {
+            "id_1": "Шахтер",
+            "id_2": "Слесарь",
+            "id_3": "Электрик",
+            "id_4": "Столяр",
+            "id_5": "Крановщик"
+        }
+    }`,
+
+    OccupationFemaleJson: `{
+        "count": 5,
+        "list": {
+            "id_1": "Медсестра",
+            "id_2": "Визажист",
+            "id_3": "Няня",
+            "id_4": "Дизайнер",
+            "id_5": "Кассир"
+        }
+    }`,
+    
     randomIntNumber: (max = 1, min = 0) => Math.floor(Math.random() * (max - min + 1) + min),
 
     randomValue: function (json) {
@@ -69,9 +103,17 @@ const personGenerator = {
         return gender==='Мужчина' ? this.randomValue(this.surnameJson) : `${this.randomValue(this.surnameJson)}а`;
     },
     
+    randomSecondName: function(gender) {
+        return gender==='Мужчина' ? `${this.randomValue(this.secondNameJson)}ович` : `${this.randomValue(this.secondNameJson)}овна`;
+    },
+    
     randomGender: function() {
         const gender = this.randomIntNumber();
             return gender ? this.GENDER_MALE : this.GENDER_FEMALE;
+    },
+
+    randomOccupation: function (gender) {
+        return gender==='Мужчина' ? this.randomValue(this.OccupationMaleJson) : this.randomValue(this.OccupationFemaleJson);
     },
 
     getPerson: function () {
@@ -80,8 +122,9 @@ const personGenerator = {
         this.person.gender = this.randomGender();
         this.person.firstName = this.randomFirstName(this.person.gender);
         this.person.surName = this.randomSurname(this.person.gender);
+        this.person.secondName = this.randomSecondName(this.person.gender);
         this.person.dateOfBirth = `${this.randomIntNumber(1950, 2000)} года рождения`;
-
+        this.person.occupation = this.randomOccupation(this.person.gender);
         return this.person;
     }
 };
