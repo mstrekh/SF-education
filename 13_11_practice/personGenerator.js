@@ -62,33 +62,16 @@ const personGenerator = {
     },
 
     randomFirstName: function(gender) {
-        if(gender==='Мужчина') {
-            return this.randomValue(this.firstNameMaleJson);
-        }
-        else {
-            return this.randomValue(this.firstNameFemaleJson);
-        }
+        return gender==='Мужчина' ? this.randomValue(this.firstNameMaleJson) : this.randomValue(this.firstNameFemaleJson);
     },
-
-
-     randomSurname: function(gender) {
-        if(gender==='Мужчина') {
-            return this.randomValue(this.surnameJson);
-        }
-        else {
-            return `${this.randomValue(this.surnameJson)}а`;
-        }
-
+    
+    randomSurname: function(gender) {
+        return gender==='Мужчина' ? this.randomValue(this.surnameJson) : `${this.randomValue(this.surnameJson)}а`;
     },
+    
     randomGender: function() {
         const gender = this.randomIntNumber();
-        if (gender) {
-            return this.GENDER_MALE
-         }
-         else {
-             return this.GENDER_FEMALE;
-        } 
-             
+            return gender ? this.GENDER_MALE : this.GENDER_FEMALE;
     },
 
     getPerson: function () {
