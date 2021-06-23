@@ -4,6 +4,6 @@ window.onload = function() {
     document.getElementById('firstNameOutput').innerText = initPerson.firstName;
     document.getElementById('surnameOutput').innerText = initPerson.surName;
     document.getElementById('genderOutput').innerText = initPerson.gender;
-    document.getElementById('dobOutput').innerText = initPerson.dateOfBirth; 
+    document.getElementById('birthYearOutput').innerText = initPerson.dateOfBirth; 
 
 };
